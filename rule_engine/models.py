@@ -7,7 +7,7 @@ class User(AbstractUser, PermissionsMixin):
     email = models.EmailField(null=False, unique=True)
     failed_logins = models.IntegerField(null=False, default=0)
     is_blocked = models.BooleanField(default=False)
-    number_phone = models.CharField(max_length=1024, null=True)
+    number_phone = models.CharField(max_length=1024, null=True, blank=True)
     internal_user=models.BooleanField(default=False)
     
     def __str__(self):
