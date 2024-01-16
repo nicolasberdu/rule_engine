@@ -1,0 +1,20 @@
+[
+    {
+        "model": "rule_engine.Rule",
+        "pk": 1,
+        "fields": {
+            "attribute": "login_failures",
+            "description": "Cantidad de intentos de login permitidos",
+            "value": "5"
+        }
+    },
+    {
+        "model": "rule_engine.Rule",
+        "pk": 2,
+        "fields": {
+            "attribute": "activation_link_expiration_time",
+            "description": "Tiempo de expiracion de link de activacion en horas",
+            "value": "5"
+        }
+    }
+]

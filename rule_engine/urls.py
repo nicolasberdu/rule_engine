@@ -17,13 +17,18 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.contrib.auth.decorators import login_required
-from .views import Login, Index, Logout
+from .views import Login, Index, Logout, UserList, UserDetail, UserCreate, UserDelete, UserActivation
 
 urlpatterns = [
+    path('', login_required(Index.as_view(), login_url='login'), name='index'),
     path('admin/', admin.site.urls),
 
     path('login', Login.as_view(), name='login'),
     path('logout', Logout.as_view(), name='logout'),
-    path('', login_required(Index.as_view(), login_url='login'), name='index'),
+    path('users', UserList.as_view(), name='user_list'),
+    path('users/<int:pk>', UserDetail.as_view(), name='user_detail'),
+    path('users/create', UserCreate.as_view(), name='user_create'),
+    path('users/<int:pk>/delete', UserDelete.as_view(), name='user_delete'),
+    path('users/active/<str:key>', UserActivation.as_view(), name='user_activation'),
 
 ]
