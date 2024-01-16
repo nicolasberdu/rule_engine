@@ -1,5 +1,6 @@
 /venv
 db.sqlite3
 /rule_engine/migrations/__pycache__
+/rule_engine/migrations
 /rule_engine/__pycache__
 /rule_engine/handlers/__pycache__
